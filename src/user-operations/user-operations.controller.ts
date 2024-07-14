@@ -1,20 +1,29 @@
-import { Body, Controller, Get, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  UsePipes,
+  ValidationPipe,
+} from '@nestjs/common';
 import { UserOperationsService } from './user-operations.service';
-import { BlockUserDto } from 'src/dto/blockUser.dto';
-import { UnblockUserDto } from 'src/dto/unblockUser.dto';
+import { BlockUserDto } from './dto/blockUser.dto';
+import { UnblockUserDto } from './dto/unblockUser.dto';
+import { User } from './schemas/user.schema';
 
-@Controller('user-operations')
+@Controller('userOperations')
 export class UserOperationsController {
   constructor(private readonly userOperationsService: UserOperationsService) {}
 
-  @Post('block')
+  @Post('blockUser')
   @UsePipes(new ValidationPipe({ whitelist: true }))
   async blockUser(@Body() blockUserDto: BlockUserDto) {
     const { userId, blockUserId } = blockUserDto;
     return this.userOperationsService.blockUser(userId, blockUserId);
   }
 
-  @Post('unblock')
+  @Post('unblockUser')
   @UsePipes(new ValidationPipe({ whitelist: true }))
   async unblockUser(@Body() unblockUserDto: UnblockUserDto) {
     const { userId, unblockUserId } = unblockUserDto;
@@ -27,7 +36,7 @@ export class UserOperationsController {
   }
 
   @Get(':userId/unblocked')
-  async getUnblockedUsers(@Param('userId') userId: string) {
+  async getUnblockedUsers(@Param('userId') userId: string): Promise<User[]> {
     return this.userOperationsService.getUnblockedUsers(userId);
   }
 }

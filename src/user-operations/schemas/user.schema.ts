@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Types } from 'mongoose';
+import { Document } from 'mongoose';
 
 @Schema({
   timestamps: true,
@@ -28,19 +28,3 @@ export class User extends Document {
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
-
-UserSchema.pre('save', function (next) {
-  if (!this.userid) {
-    this.userid = new Types.ObjectId().toString();
-  }
-  next();
-});
-
-export interface QueryParams {
-  page?: string;
-  limit?: string;
-  skip?: string;
-  keyword?: string;
-  minage?: string;
-  maxage?: string;
-}

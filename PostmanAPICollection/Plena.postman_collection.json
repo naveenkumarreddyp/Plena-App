@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "8bd9fe5a-b2f3-4719-9f6a-dd90b6926469",
+		"name": "Plena",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"U101\",\r\n    \"password\": \"Pass@12345\",\r\n    \"firstname\": \"qwerty\",\r\n    \"lastname\": \"qwerty\",\r\n    \"dateofbirth\": \"14-07-2000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"U101\",\r\n    \"password\": \"Pass@12345\",\r\n    \"firstname\": \"qwerty\",\r\n    \"lastname\": \"qwerty\",\r\n    \"dateofbirth\": \"14-07-2000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/?keyword=u&limit=100&page=1&skip=0&minage=0&maxage=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "u"
+						},
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "minage",
+							"value": "0"
+						},
+						{
+							"key": "maxage",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-user-by-id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"naveen1\",\r\n    \"password\": \"Pass@12345\",\r\n    \"firstname\": \"Naveen\",\r\n    \"lastname\": \"P\",\r\n    \"dateofbirth\": \"12-07-2024\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/66938f74dc0e82689d6e2ae",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"66938f74dc0e82689d6e2ae"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-user-by-id",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"password\": \"Pass@54321\",\r\n    \"firstname\": \"Naveen\",\r\n    \"lastname\": \"P\",\r\n    \"dateofbirth\": \"12-07-2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/669378788987e11fdf7fbdd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"669378788987e11fdf7fbdd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-user-by-id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"password\": \"Pass@54321\",\r\n    \"firstname\": \"Naveen\",\r\n    \"lastname\": \"P\",\r\n    \"dateofbirth\": \"12-07-2022\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/669362256d77d26c4f4758af",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"669362256d77d26c4f4758af"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "block-users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"669387990fb02e5af7949a31\",\r\n    \"blockUserId\":\"669388100fb02e5af7949a5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/userOperations/blockUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"userOperations",
+						"blockUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unblock-users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"669387990fb02e5af7949a31\",\r\n    \"unblockUserId\":\"669387990fb02e5af7949a31\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/userOperations/unblockUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"userOperations",
+						"unblockUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-blocked-users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/userOperations/669387990fb02e5af7949a1/blocked",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"userOperations",
+						"669387990fb02e5af7949a1",
+						"blocked"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-unblocked-users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/userOperations/669387990fb02e5af7949a31/unblocked",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"userOperations",
+						"669387990fb02e5af7949a31",
+						"unblocked"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,5 +1,6 @@
 {
-    "port":"3010",
-    "dburl":"mongodb://localhost:27017/demoApp",
-    "dbname":"PlenaApp"
+  "port": "3000",
+  "dburl": "mongodb://localhost:27017/PlenaApp",
+  "dbname": "PlenaApp",
+  "redisurl": "redis://localhost:6379"
 }
