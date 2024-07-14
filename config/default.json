@@ -1,0 +1,5 @@
+{
+    "port":"3010",
+    "dburl":"mongodb://localhost:27017/demoApp",
+    "dbname":"PlenaApp"
+}
